@@ -13,4 +13,4 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     // 색상으로 자동차 검색하는 쿼리 메서드
     List<Car> findByColor(@Param("color") String color);
-}
+ }

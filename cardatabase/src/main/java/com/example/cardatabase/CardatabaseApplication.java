@@ -21,12 +21,12 @@ public class CardatabaseApplication implements CommandLineRunner {
 	private final CarRepository repository;
 	private final OwnerRepository ownerRepository;
 
-	public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository) {
-		this.repository = repository;
+    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository) {
+        this.repository = repository;
 		this.ownerRepository = ownerRepository;
-	}
+    }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		SpringApplication.run(CardatabaseApplication.class, args);
 	}
 
