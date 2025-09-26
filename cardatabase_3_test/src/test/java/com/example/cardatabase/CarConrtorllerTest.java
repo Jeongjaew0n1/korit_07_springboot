@@ -1,0 +1,27 @@
+package com.example.cardatabase;
+
+
+import com.example.cardatabase.domain.CarRepository;
+import com.example.cardatabase.web.CarController;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+@WebMvcTest(CarController.class)
+public class CarConrtorllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockitoBean
+    private CarRepository carRepository;
+
+    @Test
+    @DisplayName("GET / cars 요청 테스트 검증")
+    void testGet
+
+
+
+}
