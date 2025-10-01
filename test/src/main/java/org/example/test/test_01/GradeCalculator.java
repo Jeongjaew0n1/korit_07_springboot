@@ -1,7 +1,4 @@
 package org.example.test.test_01;
-
-import java.util.*;
-
 /*
 ### 문제 1: 학생 성적 평균 계산기
 

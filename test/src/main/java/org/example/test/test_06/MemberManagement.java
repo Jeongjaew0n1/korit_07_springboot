@@ -1,6 +1,4 @@
 package org.example.test.test_06;
-
-
 /*
 ### 문제 6: 회원 정보 관리 (Getter/Setter와 유효성 검사)
 
