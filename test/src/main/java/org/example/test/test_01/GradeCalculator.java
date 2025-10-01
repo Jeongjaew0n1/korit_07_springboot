@@ -30,11 +30,16 @@ public class GradeCalculator {
 
     public static double calculateAverage(Map<String, Integer> scores) {
         double sum = 0;
-        // TODO: scores 맵의 모든 점수를 합산하여 합계를 구하는 코드를 작성하시오.
-
-        // TODO: 합산된 점수를 과목 수로 나누어 평균을 계산하고 반환하는 코드를 작성하시오.
         // 단, 과목이 없을 경우 0점을 반환해야 합니다.
-        return 0.0;
+        if (scores == null || scores.isEmpty()) {
+            return 0.0;
+        }
+        // TODO: scores 맵의 모든 점수를 합산하여 합계를 구하는 코드를 작성하시오.
+        for (int score : scores.values()) {
+            sum += score;
+        }
+        // TODO: 합산된 점수를 과목 수로 나누어 평균을 계산하고 반환하는 코드를 작성하시오.
+        return sum / scores.size();
     }
 
     public static void main(String[] args) {
@@ -60,5 +65,11 @@ public class GradeCalculator {
 
         // TODO: students 리스트를 순회하며 각 학생의 이름과 평균 점수를 출력하시오.
         // calculateAverage 메서드를 반드시 사용해야 합니다.
+        for (Map<String, Object> student : students) {
+            String name = (String) student.get("name");
+            Map<String, Integer> scores = (Map<String, Integer>) student.get("scores");
+            double avg = calculateAverage(scores);
+            System.out.println("학생: " + name + ", 평균 점수: " + avg);
+        }
     }
 }
