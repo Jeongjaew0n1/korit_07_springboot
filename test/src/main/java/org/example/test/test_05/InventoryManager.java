@@ -60,7 +60,7 @@ public class InventoryManager {
         try {
             laptop.decreaseStock(orderQuantity);
         } catch (OutOfStockException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         } finally {
             System.out.println();
         }
