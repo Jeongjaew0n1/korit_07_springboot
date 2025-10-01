@@ -1,4 +1,4 @@
-package org.example.test;
+package org.example.bookstore.test;
 
 class Animal {
     public void makeSound() {
