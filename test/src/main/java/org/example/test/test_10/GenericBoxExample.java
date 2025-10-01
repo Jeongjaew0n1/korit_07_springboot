@@ -34,9 +34,12 @@ class Box<T> {
 public class GenericBoxExample {
     public static void main(String[] args) {
         // TODO: "Hello World" 문자열을 담는 Box<String> 객체를 생성하고 내용물을 출력하시오.
-        String String = "";
-        Box<String> Box1 = new Box<>(String);
-        Box1.getContent();
+        Box<String> Box1 = new Box<>("Hello World");
+        String BoxString = Box1.getContent();
+        System.out.println("문자열 상자 내용: " + BoxString);
         // TODO: 숫자 123을 담는 Box<Integer> 객체를 생성하고 내용물을 출력하시오.
+        Box<Integer> Box2 = new Box<>(123);
+        int BoxInt = Box2.getContent();
+        System.out.println("정수 상자 내용: " + BoxInt);
     }
 }
