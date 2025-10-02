@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0c9746b5-a715-4e90-a5e8-5c88196cad70" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../learning_logs/20251002.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/todolist.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/todolist_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/AuthEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/AppUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/Todo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/TodoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/AccountCredentialsRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/TodoRequestRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/TodoUpdateRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/web/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/web/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bookstore.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cardatabase_2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../cardatabase_2/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/todolist">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jooms0212&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jeongjaew0n1/korit_07_springboot.git&quot;,
+    &quot;accountId&quot;: &quot;8ef324a3-87ba-4fc3-a85b-b5a8586220c7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33ULiBHEErRF4tH08JL6TuyvhNc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.todolist [:com.example.todolist.TodolistApplication.main()].executor": "Run",
+    "Gradle.소스 다운로드.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/jeongjaewon/korit_07_springboot/todolist_project"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="0c9746b5-a715-4e90-a5e8-5c88196cad70" name="변경" comment="" />
+      <created>1759366828263</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759366828263</updated>
+    </task>
+    <servers />
+  </component>
+</project>
