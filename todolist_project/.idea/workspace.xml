@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c9746b5-a715-4e90-a5e8-5c88196cad70" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../learning_logs/20251002.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/todolist.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/todolist_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/AuthEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/AuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/AppUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/Todo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/domain/TodoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/AccountCredentialsRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/TodoRequestRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/record/TodoUpdateRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/TodoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/web/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todolist/src/main/java/com/example/todolist/web/TodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bookstore.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cardatabase_2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../cardatabase_2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,19 +63,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.todolist [:com.example.todolist.TodolistApplication.main()].executor": "Run",
-    "Gradle.소스 다운로드.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/jeongjaewon/korit_07_springboot/todolist_project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.todolist [:com.example.todolist.TodolistApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.소스 다운로드.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/jeongjaewon/korit_07_springboot/todolist_project&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
       <changelist id="0c9746b5-a715-4e90-a5e8-5c88196cad70" name="변경" comment="" />
