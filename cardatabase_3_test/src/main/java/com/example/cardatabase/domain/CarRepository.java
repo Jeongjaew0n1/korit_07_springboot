@@ -5,7 +5,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
-import java.util.Optional;
 
 @RepositoryRestResource
 public interface CarRepository extends JpaRepository<Car, Long> {
@@ -14,6 +13,4 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     // 색상으로 자동차 검색하는 쿼리 메서드
     List<Car> findByColor(@Param("color") String color);
-
-    Optional<Car> findById(String id);
  }

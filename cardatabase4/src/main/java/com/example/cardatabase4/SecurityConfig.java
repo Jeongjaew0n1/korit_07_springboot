@@ -24,15 +24,15 @@ import java.util.Arrays;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
     private final UserDetailsServiceImpl userDetailsService;
-    private final AuthenticationFilter authenticationFilter;
+    private final AuthencationFilter authencationFilter;
     private final AuthEntryPoint exceptionHandler;
 
-    public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthenticationFilter authenticationFilter, AuthEntryPoint exceptionHandler) {
+    public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthencationFilter authencationFilter, AuthEntryPoint exceptionHandler) {
         this.userDetailsService = userDetailsService;
-        this.authenticationFilter = authenticationFilter;
+        this.authencationFilter = authencationFilter;
         this.exceptionHandler = exceptionHandler;
-
     }
 
     public void configGlobal (AuthenticationManagerBuilder auth) throws Exception {
@@ -56,16 +56,15 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(sess ->
                         sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth ->
-                        auth.requestMatchers(HttpMethod.POST, "/login")
-                        .permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .anyRequest().authenticated()
+                )
                 // 필터 및 예외 처리기를 추가한 부분
-                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .exceptionHandling(ex ->
-                        ex.authenticationEntryPoint(exceptionHandler));
+                .addFilterBefore(authencationFilter, UsernamePasswordAuthenticationFilter.class)
+                .exceptionHandling(ex -> ex.authenticationEntryPoint(exceptionHandler));
         return http.build();
     }
-
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

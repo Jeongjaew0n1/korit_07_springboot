@@ -28,3 +28,4 @@ public class Owner {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Car> cars;
 }
+

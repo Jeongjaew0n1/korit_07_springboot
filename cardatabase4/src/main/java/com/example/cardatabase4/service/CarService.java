@@ -2,8 +2,8 @@ package com.example.cardatabase4.service;
 
 import com.example.cardatabase4.domain.Car;
 import com.example.cardatabase4.domain.CarRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,24 +16,24 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    // 1. 모든 자동차 목록을 조회
+    //1. 모든 자동차 목록을 조회한다고 가정하겠습니다.
     public List<Car> getCars() {
         return carRepository.findAll();
     }
 
-    // 2. 새로운 자동차 저장
-    public Car addCar(Car car){
+    //2. 새로운 자동차 저장
+    public Car addCar(Car car) {
         return carRepository.save(car);
     }
 
-    // 3. 차량 한 대 조회
+    //3. 차량 한 대 조회
     public Optional<Car> getCarById(Long id) {
         return carRepository.findById(id);
     }
 
     // 4. 차량 한 대 삭제
     public boolean deleteCar(Long id) {
-        if (carRepository.existsById(id)) {
+        if(carRepository.existsById(id)) {
             carRepository.deleteById(id);
             return true;
         }
@@ -56,5 +56,4 @@ public class CarService {
                     // @Transactional에 의해 변경이 감지되어 자동으로 DB 업데이트가 이루어집니다.
                 });
     }
-
 }

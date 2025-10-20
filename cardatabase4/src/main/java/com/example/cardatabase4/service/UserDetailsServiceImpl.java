@@ -25,15 +25,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Optional<AppUser> user = appUserRepository.findByUsername(username);
 
         UserBuilder builder = null;
-        if (user.isPresent()) {
-            AppUser currentUser = user.get(); // user 객체는 Optional 자료형이지 AppUser가 아닙니다.
+        if(user.isPresent()) {
+            AppUser currentUser = user.get();   // user 자체는 Optional 자료형이지 AppUser가 아닙니다.
             builder = withUsername(username);
-            builder.password(currentUser.getPassword()).roles(currentUser.getRole()).build();
+            builder.password(currentUser.getPassword()).roles(currentUser.getRole());
         } else {
-            throw new UsernameNotFoundException("User not found.");
+            throw new UsernameNotFoundException("User Not Found.");
         }
-
         return builder.build();
     }
 }
-

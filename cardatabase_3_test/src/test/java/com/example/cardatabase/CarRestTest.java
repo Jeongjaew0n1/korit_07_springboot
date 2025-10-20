@@ -22,8 +22,8 @@ public class CarRestTest {
     @DisplayName("자격증명인증테스트")
     public void testAuthentication() throws Exception {
         this.mockMvc.perform(post("/login")
-                        .content("{\"username\":\"admin\",\"password\":\"admin\"}")
-                        .header(HttpHeaders.CONTENT_TYPE,"application/json"))
+                .content("{\"username\":\"admin\",\"password\":\"admin\"}")
+                .header(HttpHeaders.CONTENT_TYPE,"application/json"))
                 .andDo(print()).andExpect(status().isOk());
     }
 }

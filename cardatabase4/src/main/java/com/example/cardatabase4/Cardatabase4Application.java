@@ -1,18 +1,16 @@
-//package com.example.cardatabase4;
-//
+package com.example.cardatabase4;
+
 //import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 //
 //@SpringBootApplication
 //public class Cardatabase4Application {
+//
 //	public static void main(String[] args) {
 //		SpringApplication.run(Cardatabase4Application.class, args);
 //	}
 //
 //}
-
-package com.example.cardatabase4;
-
 import com.example.cardatabase4.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,7 +61,7 @@ public class Cardatabase4Application implements CommandLineRunner {
 
 		// AppUser 더미 데이터를 추가
 		// 저 위에 보시면 Owner의 경우에는 owner1 / owner2 만들어가지고 ownerRepository에 저장했었습니다.
-		userRepository.save(new AppUser("user", "$2a$12$ROmPpshcOro3aNXMDQysL.ioTGYM7CAaChbE732nTx4RpnKt9Z/We", "USER"));
+		userRepository.save(new AppUser("user", "$2a$12$RfH0UTkhc7QTzoHJtHfwqOxTjOZprmuRG7IKPrdJCe2uL2aXzaAYe", "USER"));
 		userRepository.save(new AppUser("admin", "$2a$12$HohON.YXc4B4ZaeD4BM.kOMdPFsbHte2657bNP1JDP9eyQJ6K85z.", "ADMIN"));
 
 	}

@@ -10,14 +10,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class CardatabaseApplicationTests {
-    @Autowired
-    private CarController controller;
+	@Autowired
+	private CarController controller;
 
     @Test
-    @DisplayName("첫 번째 Test Case")
-    void contextLoads() {
-        assertThat(controller).isNotNull();
-    }
+	@DisplayName("첫 번째 Test Case")
+	void contextLoads() {
+		assertThat(controller).isNotNull();
+	}
 
 
 
