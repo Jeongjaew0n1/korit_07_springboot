@@ -1,7 +1,6 @@
-package com.todolist.demo.web;
+package com.shoppinglist.shoppinglist2.web;
 
-import com.todolist.demo.dto.AccountCredentialsDto;
-import com.todolist.demo.service.JwtService;
+import com.shoppinglist.shoppinglist2.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -19,18 +18,22 @@ public class LoginController {
     private final AuthenticationManager authenticationManager;
 
     @PostMapping("/login")
-    public ResponseEntity<?> getToken(@RequestBody AccountCredentialsDto credentialsDto) {
-        UsernamePasswordAuthenticationToken creds = new UsernamePasswordAuthenticationToken(
-                credentialsDto.getUsername(),
-                credentialsDto.getPassword()
-        );
+    public ResponseEntity<?> login(@RequestBody AccountCredentials credentials) {
+        // 자격 증명으로 토큰 생성하는 과정
+        UsernamePasswordAuthenticationToken creds =
+                new UsernamePasswordAuthenticationToken(credentials.username(), credentials.password());
 
+        // 사용자 인증
         Authentication auth = authenticationManager.authenticate(creds);
-        String jwts = jwtService.getToken(auth.getName());
 
-        return ResponseEntity.ok()
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwts)
-                .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization")
+        // JWT 생성
+        String jwt = jwtService.generateToken(auth.getName());
+
+        // JWT를 'Authentication' 헤더에 담아서 응답
+        return ResponseEntity
+                .ok()
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
+                .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization") // FrontEnd 에서 헤더를 읽을 수 있도록 설정
                 .build();
     }
 }

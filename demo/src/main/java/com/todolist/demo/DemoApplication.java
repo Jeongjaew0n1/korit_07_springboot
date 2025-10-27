@@ -20,11 +20,18 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner runner(UserRepository userRepository, TodoRepository todoRepository, PasswordEncoder passwordEncoder) {
 		return args -> {
-			User user = new User("user", passwordEncoder.encode("user"),"user");
+			//테스트용 user 생성
+			User user = new User("user", passwordEncoder.encode("user"), "USER");
 			userRepository.save(user);
 
+			// 테스트용 to-do 목록 생성
 			todoRepository.save(new Todo("스프링부트 프로젝트 만들기", user));
-			todoRepository.save(new Todo("리액트 연습하기", user));
+			todoRepository.save(new Todo("리액트 연동하기", user));
+			todoRepository.save(new Todo("Todolist Frontend 만들기", user));
+			todoRepository.save(new Todo("shoppinglist Backend 만들기", user));
+			todoRepository.save(new Todo("Team project 하기", user));
+
 		};
 	}
+
 }
