@@ -1,3 +1,4 @@
 package com.shoppinglist.shoppinglist2.web;
 
-public record AccountCredentials(String username, String password) {}
+public record AccountCredentials(String username, String password) {
+}

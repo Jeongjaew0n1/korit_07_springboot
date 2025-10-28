@@ -32,7 +32,7 @@ public class User {
 
     // 한 명의 유저는 여러 개의 쇼핑 아이템을 가질겁니다.
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore // car 에서처럼 순환참조를 일으키지 않도록 했습니다.
+    @JsonIgnore // car에서처럼 순환참조를 일으키지 않도록 했습니다.
     private List<ShoppingItem> items;
 
     // CommandLineRunner 상에서 사용할 간단한 생성자 정의 하겠습니다.

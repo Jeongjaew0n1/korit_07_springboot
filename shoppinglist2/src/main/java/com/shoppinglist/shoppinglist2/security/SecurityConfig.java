@@ -27,10 +27,11 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
+
     private final UserDetailsServiceImpl userDetailsService;
     private final JwtService jwtService;
     private final AuthEntryPoint authEntryPoint;
-
+    private final CustomOAuth2SuccessHandler customOAuth2SuccessHandler;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -38,7 +39,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
+            throws Exception {
         return config.getAuthenticationManager();
     }
 
@@ -49,36 +51,37 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .cors(withDefaults())
-                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests.anyRequest().permitAll());
+        http.csrf(AbstractHttpConfigurer::disable)  // CSRF 보호 비활성화(Stateless JWT 사용)
+                .cors(Customizer.withDefaults())    // CORS 설정(이하의 설정 사용)
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 세션 비활성화
+                .authorizeHttpRequests(auth -> auth
+                        // /login 엔드포인트의 POST 요청은 모두 허용
+                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .requestMatchers("/swagger-ui/index.html", "/swagger-ui/**", "/api-docs", "/api-docs/**").permitAll()
+                        .requestMatchers("/oauth2/**", "/login/oauth2/code/*").permitAll()
+                        .anyRequest().authenticated())
+                .oauth2Login(oauth2 -> oauth2.successHandler(customOAuth2SuccessHandler))
+                .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint(authEntryPoint)) // 인증 실패 시 처리
+                .addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class); // JWT 필터 추가
 
-//        http.csrf(AbstractHttpConfigurer::disable)  // CSRF 보호 비활성화(Stateless JWT 사용)
-//                .cors(Customizer.withDefaults())    // CORS 설정(이하의 설정 사용)
-//                .sessionManagement(session ->
-//                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 세션 비활성화
-//                .authorizeHttpRequests(auth -> auth
-//                        // "/login"  엔드포인트의 POST 요청은 모두 허용
-//                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
-//                        .requestMatchers("/swagger-ui/**","/api-docs/**").permitAll()
-//                        .anyRequest().authenticated())
-//                .exceptionHandling(ex -> ex
-//                        .authenticationEntryPoint(authEntryPoint))  // 인증 실패 시 처리
-//                .addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+//                http.csrf(csrf -> csrf.disable())
+//                .cors(withDefaults())
+//                .authorizeHttpRequests(authorizeHttpRequests ->
+//                        authorizeHttpRequests.anyRequest().permitAll());
         return http.build();
     }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173","http://localhost:5174"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","PATCH"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));    // 모드 헤더 허용
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:5174")); // FE 서버 주소
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));    // 모든 헤더 허용
         configuration.setAllowCredentials(true);
-
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
-
         return source;
     }
 }

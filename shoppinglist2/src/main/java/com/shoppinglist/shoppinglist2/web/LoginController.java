@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class LoginController {
+
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AccountCredentials credentials) {
-        // 자격 증명으로 토큰 생성하는 과정
+        // 자격 증명으로 인증 토큰 생성하는 과정
         UsernamePasswordAuthenticationToken creds =
                 new UsernamePasswordAuthenticationToken(credentials.username(), credentials.password());
 
@@ -29,11 +30,10 @@ public class LoginController {
         // JWT 생성
         String jwt = jwtService.generateToken(auth.getName());
 
-        // JWT를 'Authentication' 헤더에 담아서 응답
-        return ResponseEntity
-                .ok()
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
-                .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization") // FrontEnd 에서 헤더를 읽을 수 있도록 설정
+        // JWT를 'Authorization' 헤더에 담아서 응답
+        return ResponseEntity.ok()
+                .header(HttpHeaders.AUTHORIZATION, "Bearer ", jwt)
+                .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization") // FE에서 헤더를 읽을 수 있도록 설정
                 .build();
     }
 }
